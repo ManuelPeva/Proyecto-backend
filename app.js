@@ -11,3 +11,8 @@ const db = knex(knexConfig);
 
 // Middleware para procesar JSON
 app.use(express.json());
+
+//Iniciar el servidor
+app.listen(PORT,() =>{
+    console.log(`Server is running on http://localhost:${PORT}`);
+})
