@@ -1,5 +1,5 @@
 // controllers/productosController.js
-const knex = require('../db');
+const knex = require('../knexfile');
 
 exports.getAllProductos = async (req, res) => {
 const productos = await knex('productos').select('*');
