@@ -1,18 +1,17 @@
-//Fuente de código config.js
+// app.js (o index.js)
 const express = require('express');
-const knex = require('knex');
-const knexConfig = require('./knexfile');
-
 const app = express();
-const PORT = 3000;
-
-//configurar knex
-const db = knex(knexConfig);
+const productosRoutes = require('./routes/productos');
+// Importa las rutas para las otras tablas
 
 // Middleware para procesar JSON
 app.use(express.json());
 
-//Iniciar el servidor
-app.listen(PORT,() =>{
-    console.log(`Server is running on http://localhost:${PORT}`);
-})
+// Rutas
+app.use(productosRoutes);
+// Usa las rutas para las otras tablas
+
+const PORT = 3000;
+app.listen(PORT, () => {
+console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
