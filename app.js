@@ -7,6 +7,7 @@ const ventasRoutes = require('./routes/ventas'); // Importa las rutas para venta
 const detalleventaRoutes = require('./routes/detalleventa'); // Importa las rutas para detalleventa
 
 // Middleware para procesar JSON
+require('dotenv').config()
 app.use(express.json());
 
 // Rutas
